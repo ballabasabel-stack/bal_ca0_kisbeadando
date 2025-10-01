@@ -28,9 +28,8 @@ private:
         auto msg2 = std_msgs::msg::Float32();
 
         auto t = count_ * 0.01;
-        msg1.data = tan(t * 2*M_PI*1) * 2;
-        msg2.data = tan(t * 2*M_PI*2) * 0.5;
-
+        msg1.data = atan( tan(t * 2* M_PI* 1) ); 
+        msg1.data = atan( tan(t * 5* M_PI* 1) ); 
         pub1_->publish(msg1);
         pub2_->publish(msg2);
 
