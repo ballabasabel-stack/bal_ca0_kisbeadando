@@ -31,8 +31,8 @@ private:
         msg1.data = tan(t * 2*M_PI*1) * 2;
         msg2.data = tan(t * 2*M_PI*2) * 0.5;
 
-        pub1->publish(msg1);
-        pub2->publish(msg2);
+        pub1_->publish(msg1);
+        pub2_->publish(msg2);
 
         count_++;
     }

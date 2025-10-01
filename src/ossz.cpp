@@ -33,8 +33,8 @@ private:
         if (!val1_received_ || !val2_received_) return; 
 
             auto sum_msg = std_msgs::msg::Float32();
-            summsg.data = val1_ + val2_;
-            pub->publish(sum_msg);
+            sum_msg.data = val1_ + val2_;
+            pub_->publish(sum_msg);
         }
 
     rclcpp::Publisher<stdmsgs::msg::Float32>::SharedPtr pub_;
