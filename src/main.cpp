@@ -17,7 +17,7 @@ public:
             RCLCPP_INFO(this->get_logger(), "tangens jelgenerátor");
             pub1_ = this->create_publisher<std_msgs::msg::Float32>("tan1", 10);
             pub2_ = this->create_publisher<std_msgs::msg::Float32>("tan2", 10);
-            timer_ = this->create_wall_timer(50ms, std::bind(&szinusz::timer_callback, this));
+            timer_ = this->create_wall_timer(50ms, std::bind(&tangens::timer_callback, this));
         }
     
 
