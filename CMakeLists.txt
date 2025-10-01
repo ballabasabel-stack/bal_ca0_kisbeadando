@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ros2_cpp_template)
+project(bal_ca0_kisbeadando)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -13,22 +13,21 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(geometry_msgs REQUIRED)
 
 set(ament_dependencies
   rclcpp
   std_msgs
   geometry_msgs
 )
+add_executable(main src/main.cpp)
+ament_target_dependencies(main rclcpp std_msgs)
 
-# add_executable(simple_sub_node src/print_pose.cpp)
-# ament_target_dependencies(simple_sub_node ${ament_dependencies} )
-
-install(DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME})
+add_executable(ossz src/ossz.cpp)
+ament_target_dependencies(ossz rclcpp std_msgs)
 
 install(TARGETS
-# simple_sub_node
-DESTINATION lib/${PROJECT_NAME})
+  main
+  ossz
+  DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
