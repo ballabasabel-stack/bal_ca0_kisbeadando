@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ros2_cpp_template</name>
+  <name>bal_ca0_kisbeadando</name>
   <version>0.0.0</version>
   <description>TODO: jelgenerátor Ballabás Ábel </description>
   <maintainer email="ballabasabel@gmail.com">TODO:</maintainer>
