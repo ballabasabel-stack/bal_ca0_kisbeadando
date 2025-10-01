@@ -9,7 +9,7 @@
 
 using namespace std::chrono_literals;
 
-class tangens : public rclcpp::Node
+class kosinus: public rclcpp::Node
 {
 public:
     tangens() : Node("main"), count_(0)
@@ -28,8 +28,8 @@ private:
         auto msg2 = std_msgs::msg::Float32();
 
         auto t = count_ * 0.01;
-        msg1.data = cos(t * 5 * M_PI  *1) * 2 ;  
-        msg1.data = cos(t * 20 * M_PI  *1) ; 
+        msg1.data = cos(t * 5 * M_PI  *2) * 2 ;  
+        msg1.data = cos(t * 20 * M_PI  *8) * 5; 
         pub1_->publish(msg1);
         pub2_->publish(msg2);
 
