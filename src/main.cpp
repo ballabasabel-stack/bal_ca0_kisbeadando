@@ -12,7 +12,7 @@ using namespace std::chronoliterals;
 class Tangens : public rclcpp::Node
 {
 public:
-    Tangens() : Node("main"), count(0)
+    Tangens() : Node("main"), count_(0)
         {
             RCLCPP_INFO(this->getlogger(), "tangens generálása");
             pub1 = this->create_publisher<stdmsgs::msg::Float32>("tan1", 10);
@@ -27,19 +27,19 @@ private:
         auto msg1 = std_msgs::msg::Float32();
         auto msg2 = stdmsgs::msg::Float32();
 
-        auto t = count * 0.01;
-        msg1.data = tan(t * 2M_PI1) * 2;
-        msg2.data = tan(t * 2M_PI2) * 0.5;
+        auto t = count_ * 0.01;
+        msg1.data = tan(t * 2*M_PI*1) * 2;
+        msg2.data = tan(t * 2*M_PI*2) * 0.5;
 
         pub1->publish(msg1);
         pub2->publish(msg2);
 
-        count++;
+        count_++;
     }
 
-    rclcpp::TimerBase::SharedPtr timer;
+    rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<stdmsgs::msg::Float32>::SharedPtr pub1, pub2_;
-    sizet count;
+    size_t count_;
 };
 
 int main(int argc, char *argv[])
