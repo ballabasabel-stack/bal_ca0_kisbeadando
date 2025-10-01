@@ -12,12 +12,12 @@ using namespace std::chrono_literals;
 class kosinus: public rclcpp::Node
 {
 public:
-    tangens() : Node("main"), count_(0)
+    kosinus() : Node("main"), count_(0)
         {
             RCLCPP_INFO(this->get_logger(), "tangens jelgenerátor");
             pub1_ = this->create_publisher<std_msgs::msg::Float32>("tan1", 10);
             pub2_ = this->create_publisher<std_msgs::msg::Float32>("tan2", 10);
-            timer_ = this->create_wall_timer(50ms, std::bind(&tangens::timer_callback, this));
+            timer_ = this->create_wall_timer(50ms, std::bind(&cos::timer_callback, this));
         }
     
 
@@ -44,7 +44,7 @@ private:
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<tangens>());
+    rclcpp::spin(std::make_shared<cos>());
     rclcpp::shutdown();
     return 0;
 }
