@@ -32,3 +32,8 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch bal_ca0_kisbeadando launch_example1.launch.py
 ```
 
+### Ez egy random vonalfüggvény
+### Ezzel a kóddal jelenítem meg a programot
+``` r
+ros2 run rqt_plot rqt_plot
+```
