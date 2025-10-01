@@ -25,6 +25,9 @@ ament_target_dependencies(main rclcpp std_msgs)
 add_executable(ossz src/ossz.cpp)
 ament_target_dependencies(ossz rclcpp std_msgs)
 
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME})
+  
 install(TARGETS
   main
   ossz
