@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'bal_ca0_proba'
+package_name = 'bal_ca0_kisbeadando'
 
 setup(
     name=package_name,
@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'trig_publisher = bal_ca0_proba.trig_publisher:main',
-            'trig_subscriber = bal_ca0_proba.trig_subscriber:main',
+            'trig_publisher = bal_ca0_kisbeadando.trig_publisher:main',
+            'trig_subscriber = bal_ca0_kisbeadando.trig_subscriber:main',
         ],
     },
 )
